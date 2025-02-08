@@ -1,11 +1,12 @@
-#ifndef CONFIG_H
-#define CONFIG_H
+// fetcher.h
+#ifndef FETCHER_H
+#define FETCHER_H
 
 #include <string>
+#include <vector>
 
-const std::string OUTPUT_DIR = "C:/Users/Plaifa/Downloads/Python/Data/";
-//const std::string CACERT_PATH = "C:/Users/Plaifa/AppData/Local/Programs/Python/Python312/Lib/site-packages/certifi/cacert.pem";
-//const std::string CACERT_PATH = "C:/Users/Plaifa/Downloads/C++/Data//cacert-2024-12-31.pem";
-const std::string STOCK_LIST_PATH = "C:/Users/Plaifa/Downloads/Python/Data/stocks_data1.csv";
+size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::string* output);
+std::string fetchData(const std::string& url);
+bool fetchStockData();  // ประกาศฟังก์ชัน fetchStockData()
 
-#endif // CONFIG_H
+#endif // FETCHER_H
